@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Kalnia+Glaze:wght@100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <title>Game</title>
+</head>
+
+<body>
+    <div class="screen">
+        <div id="startScreen" class="card">
+            <h1>Typing Test Game</h1>
+            <div id="boxStart">
+                <select id="select">
+                    <option value="az">a to z</option>
+                    <option value="paragraph">paragraph</option>
+                </select>
+
+                <button id="newGame">New Game</button>
+
+            </div>
+
+        </div>
+
+        <div id="onGaming" class="card">
+            <h1>Typing Test Game</h1>
+            <div class="container">
+                <label id="timer">Time:</label><br>
+                <label id="score">Score: 0</label><br>
+                <label id="bestScore">Highest Score: 0</label>
+            </div><br>
+            <div id="box">
+                <p id="printC"></p>
+            </div>
+            <div id="box2">
+
+                <input id="inputC">
+                <!-- <button id="newGame">Chơi lại</button> -->
+                <input id="inputB">
+            </div>
+
+        </div>
+
+        <div id="scorecard" class="card">
+            <h1> Your Score</h1>
+            <label id="score1">Score: 0</label><br>
+            <button id="mainMenu"> Menu </Main></button>
+
+        </div>
+
+    </div>
+
+    
+
+    </div>
+
+    <script>
+        const printC = document.getElementById("printC");
+        const inputC = document.getElementById("inputC");
+        const lbScore = document.getElementById("score");
+        const newGame = document.getElementById("newGame");
+        const timer = document.getElementById("timer");
+        const scorecard = document.getElementById("scorecard");
+        const onGaming = document.getElementById("onGaming");
+        const bestScore = document.getElementById("bestScore");
+        const startScreen = document.getElementById("startScreen");
+        const select = document.getElementById("select");
+        const inputB = document.getElementById("inputB");
+        const score1 = document.getElementById("score1");
+        const mainMenu = document.getElementById("mainMenu");
+
+
+
+        startScreen.style.display = "flex"
+        onGaming.style.display = "none";
+        scorecard.style.display = "none";
+
+
+        let arr = [];
+        let coppyArr = [];
+        let score = 0;
+        let start = 0;
+        let end = 150;
+        let fSpace;
+        let x;
+        let bestScorez = 0;
+        let end2 = 0;
+
+
+        newGame.onclick = () => {
+            startScreen.style.display = "none";
+            onGaming.style.display = "block";
+            document.documentElement.style.setProperty('--fChar', 'black');
+            arr = []
+            if (score > bestScorez) {
+                bestScorez = score;
+                bestScore.innerText = "Highest Score: " + bestScorez;
+            }
+            score = 0;
+            let now = new Date().getTime();
+            let countDown = now + 59 * 1000;
+            if (x) {
+                clearInterval(x);
+            }
+            x = setInterval(function () {
+
+
+                let distance = countDown - now;
+
+                let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                timer.innerText = "Time: " + minutes + ":" + seconds
+                countDown = countDown - 1000;
+
+                if (distance < 0) {
+                    clearInterval(x);
+                    // onGaming.style.display = "none";
+                    // scorecard.style.display = "flex";    
+                    timer.innerHTML = "EXPIRED";
+                    score1.innerText = "Score: "+ score;
+                    scorecard.style.display = "flex"
+                    onGaming.style.display = "none"
+                }
+            }, 1000);
+
+            timer.innerText = "Time: " + "1:00"
+            lbScore.innerText = "Score: 0"
+            inputC.value = ""
+
+
+            if (select.value === "az") {
+                for (let i = 0; i < 1000; i++) {
+                    for (let j = 0; j < 4; j++) {
+                        let chu = String.fromCharCode(
+                            Math.floor(Math.random() * 26) + 97
+                        )
+                        arr.push(chu);
+                    }
+                    arr.push(" ");
+                }
+                inputC.style.display = "block";
+                inputB.style.display = "none";
+                console.log(arr)
+                coppyArr = arr.slice(start, end);
+                printC.innerText = coppyArr.join("");
+
+            } else {
+                const str = "After Vance was announced as Trump’s pick and while Democrats were still waiting to see whether Biden would exit the race, Harris told several advisers she saw Trump’s choice as doubling down on his MAGA base rather than expanding the appeal of the ticket. She and her team were excited to face Vance as opposed to the others on the former president’s short list, eager to tag him as a hypocrite and Trump sycophant. But now, as her prospective running mates take turns whacking Vance over his controversial comments about women without children and his flip-flopping on Trump, as well as questioning his Appalachian roots, Harris’ team is holding Vance up against the people on her own short list to try to strike a contrast. The 39-year-old Ohio Republican is “one of the most unprepared people that we have ever put up to hold the vice presidency of the United States,” Landrieu said, with qualifications that don’t go much beyond the constitutional minimum of being a naturally born American citizen who is 35 years old. “He didn’t even run a business. He’s never run anything. And he’s about to be one heartbeat away from the largest entity in the world, and the one that’s the most important,” Landrieu said. “So it’s a fair question to ask: How would we know whether you have the capability to run domestic and national security policy for the most powerful country in the world, which you may be called to do on a moment’s notice?” Harris, who was first elected to the Senate in 2016, spent as much time in the chamber as Vance, who was first elected in 2022, before she started preparing in 2018 to run for president. And while Vance has won statewide office, those on Harris’ short list — which includes several governors, a senator and one Cabinet secretary — have served more time in government than Vance and have leadership experience in a variety of previous offices, business and the military (and NASA). Cedric Richmond, the former Louisiana congressman and Biden White House adviser who also serves as a campaign co-chair, said he is “terrified” to think about Vance being in a position to become president overnight. Several people hoping to get picked as Harris’ ticket mate echoed that message as they angle for the job. “I’ve done a lot of hiring in my life — in business and nonprofits, in government — and it’s pretty obvious when someone’s resume shows that they can’t hold down a job or haven’t held down a job for more than a year or two at a time, that there’s something wrong with them,” said Illinois Gov. J.B. Pritzker, who’s among those being vetted, referring to Vance’s brief stints in business positions before jumping into the 2022 Senate race in Ohio.";
+                let arr2 = str.split(" ");
+                for (let i = 0; i < 5000; i++) {
+                    index = Math.floor(Math.random() * 424);
+                    arr.push(arr2[index]);
+                }
+                inputC.style.display = "none";
+                inputB.style.display = "block";
+                console.log(arr)
+                end2 = 30;
+                coppyArr = arr.slice(start, end2);
+                printC.innerText = coppyArr.join(" ");
+            }
+
+        }
+
+
+        mainMenu.onclick = () =>{
+            scorecard.style.display = "none";
+            startScreen.style.display = "flex"
+        }
+
+        inputB.onkeypress = (key) => {
+            let char = String.fromCharCode(key.charCode);
+            let length = coppyArr.length;
+
+            if (char == " ") {
+                inputB.value = inputB.value.trim();
+                if (inputB.value == coppyArr[0]) {
+                    console.log(coppyArr);
+                    
+                    score += 100;
+                    lbScore.innerHTML = "Score: " + score;
+                } else {
+                    if (score != 0) {
+                        score -= 50;
+                        lbScore.innerHTML = "Score: " + score;
+                    }
+                }
+                coppyArr.shift();
+                inputB.value = ""
+                printC.innerHTML = coppyArr.join(" ");
+            }
+
+            if (coppyArr.length <= 15) {
+                start += 15;
+                end += 15;
+                coppyArr = arr.slice(start, end2);
+                printC.innerHTML = coppyArr.join(" ");
+            }
+        }
+
+
+
+
+        inputC.onkeypress = (key) => {
+            let char = String.fromCharCode(key.charCode);
+            let length = coppyArr.length;
+
+            //tìm space đầu tiên
+            for (let i = 0; i < length; i++) {
+                if (coppyArr[i] == " ") {
+                    fSpace = i;
+                    break;
+                }
+            }
+            // console.log(fSpace);
+            // if (char == " ") {
+            //     inputC.value = "";
+
+            // }
+
+            if (char == coppyArr[0]) {
+                document.documentElement.style.setProperty('--fChar', 'black');
+                coppyArr.shift();
+                console.log(coppyArr);
+                if (coppyArr[0] == " ") {
+                    printC.innerHTML = "&nbsp;" + coppyArr.join("");
+                } else {
+                    printC.innerHTML = coppyArr.join("");
+                }
+                console.log(arr);
+                score += 100;
+                lbScore.innerHTML = "Score: " + score;
+            } else {
+                document.documentElement.style.setProperty('--fChar', 'red');
+                if (score != 0) {
+                    score -= 50;
+                    lbScore.innerHTML = "Score: " + score;
+                }
+            }
+
+            if (coppyArr.length <= 100) {
+                start += 50;
+                end += 50;
+                coppyArr = arr.slice(start, end);
+                printC.innerHTML = coppyArr.join("");
+            }
+            if (char == " ") {
+                if (fSpace != 0) {
+                    document.documentElement.style.setProperty('--fChar', 'black');
+                    coppyArr.splice(0, fSpace + 1);
+                    printC.innerHTML = coppyArr.join("");
+                    console.log(coppyArr);
+                }
+                inputC.value = "";
+
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>

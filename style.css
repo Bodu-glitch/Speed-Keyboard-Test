@@ -1,0 +1,148 @@
+:root{
+    --fChar: black;
+    --bg: #8E7AB5;
+    --ca: #EEA5A6;
+
+}
+body{
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-size: 24px;
+}
+
+.screen{
+    background-color: var(--bg);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    margin-top: 0;
+    text-align: center;
+}
+.card {
+    padding: 20px;
+    background-color: var(--ca);
+    width: 50%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    
+}
+#box {
+    
+    height: 100px;
+    background-color: aliceblue;
+    padding: 10px;
+    border-radius: 10px ;
+    display: flex;
+    justify-content: center;
+    
+}
+
+#printC::first-letter {
+    color: var(--fChar);
+}
+
+#printC {
+    margin: 0;
+    
+}
+
+#box2 {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+.container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#startScreen{
+    flex-direction: column;
+    align-items: center;
+}
+#boxStart{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#select{
+    margin: 10px 0px 20px 0px ;
+    font-size: 80%;
+    padding: 0.5em 1em;
+    color: rgba(0, 0, 0, 0.80);
+    border: none rgba(0, 0, 0, 0);
+    background-color: #E493B3;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    color: aliceblue;
+    outline: none;
+    border-radius: 2px;
+}
+#newGame{
+    width: 100%;
+    margin: 10px 0px 0px 0px ;
+    font-size: 80%;
+    padding: 0.5em 1em;
+    color: rgba(0, 0, 0, 0.80);
+    border: none rgba(0, 0, 0, 0);
+    background-color: #E493B3;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    color: aliceblue;
+    border-radius: 2px;
+}
+/* #inputC{
+    h
+} */
+
+#scorecard {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#mainMenu{
+    width: 20%;
+    margin: 10px 0px 0px 0px ;
+    font-size: 80%;
+    padding: 0.5em 1em;
+    color: rgba(0, 0, 0, 0.80);
+    border: none rgba(0, 0, 0, 0);
+    background-color: #E493B3;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    color: aliceblue;
+    border-radius: 2px;
+}
+
+#inputB {
+    width: 100%;
+    margin: 10px 0px 0px 0px ;
+    font-size: 80%;
+    padding: 0.5em 1em;
+    color: rgba(0, 0, 0, 0.80);
+    border: none rgba(0, 0, 0, 0);
+    background-color: aliceblue;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    color: black;
+    border-radius: 15px;
+    outline: none;
+}
+
+#inputC{
+    width: 100%;
+    margin: 10px 0px 0px 0px ;
+    font-size: 80%;
+    padding: 0.5em 1em;
+    color: rgba(0, 0, 0, 0.80);
+    border: none rgba(0, 0, 0, 0);
+    background-color: aliceblue;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    color: black;
+    border-radius: 15px;
+    outline: none;
+}
